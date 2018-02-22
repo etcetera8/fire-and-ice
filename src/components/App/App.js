@@ -5,13 +5,21 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fakeAction, addHouses } from '../../actions';
 import { initialApiCall } from '../../api.js'
+import gif from '../../gear.gif'
 
 class App extends Component {
+  constructor(props) {
+    super(props),
+    this.state = {
+      loading: true
+    }
+  }
 
   componentDidMount = async () => {
     const houses = await initialApiCall()
     console.log(houses);
     this.props.addHousestoStore(houses)
+    this.setState({loading: false})
   }
 
   render() {
@@ -26,6 +34,9 @@ class App extends Component {
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
+        { this.state.loading &&
+          <img src={gif} />
+        }
         </div>
       </div>
     );
