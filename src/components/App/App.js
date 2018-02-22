@@ -18,12 +18,12 @@ export class App extends Component {
 
   componentDidMount = async () => {
     const houses = await initialApiCall()
-    this.props.addHousestoStore(houses)
+    await this.props.addHousesToStore(houses)
     this.setState({loading: false})
   }
 
-  makeCards = () => {
-    const cardArray = this.props.houseArray.map( house =>
+  makeCards = (array) => {
+    const cardArray = array.map( (house, index) =>
       <Card 
         name={house.name} 
         coatOfArms={house.coatOfArms}
@@ -32,8 +32,9 @@ export class App extends Component {
         titles={house.titles}
         words={house.words}
         ancestralWeapons={house.ancestralWeapons}
+        key={index}
       />
-)
+    )
     return cardArray;
   }
 
@@ -51,8 +52,11 @@ export class App extends Component {
         <div className='Display-info'>
           { this.state.loading &&
             <img src={gif} />
+          } 
+          { this.props.houseArray &&
+            this.makeCards(this.props.houseArray)
+
           }
-          {this.makeCards()}
         </div>
       </div>
     );
@@ -60,16 +64,14 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
 };
 
-const mapStateToProps = ( state ) => ({ 
+export const mapStateToProps = ( state ) => ({ 
   houseArray: state.addHouses
 });
 
-const mapDispatchToProps = dispatch => ({ 
-  addHousestoStore: (houseArray) => dispatch(addHouses(houseArray))
+export const mapDispatchToProps = dispatch => ({ 
+  addHousesToStore: (houseArray) => dispatch(addHouses(houseArray))
   
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

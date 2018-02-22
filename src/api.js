@@ -5,8 +5,7 @@ export const initialApiCall = async () => {
   const resolvedResponse = await response.json();
   return resolvedResponse;
 } catch (error) {
-  console.log("error")
-  return error
+  return "Error fetching data"
   }
 }
 

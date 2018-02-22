@@ -29,6 +29,6 @@ describe('initial Api call', () => {
       reject(new Error('failed'))
     }))
     const results = await initialApiCall();
-    expect(results).toEqual([Error: failed])
+    expect(results).toEqual("Error fetching data")
   })
 })
