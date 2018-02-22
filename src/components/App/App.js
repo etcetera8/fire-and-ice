@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fakeAction, addHouses } from '../../actions';
 import { initialApiCall } from '../../api.js'
 import gif from '../../gear.gif'
+import Card from '../Card/Card';
 
 class App extends Component {
   constructor(props) {
@@ -34,9 +35,10 @@ class App extends Component {
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
-        { this.state.loading &&
-          <img src={gif} />
-        }
+          { this.state.loading &&
+            <img src={gif} />
+          }
+          <Card />
         </div>
       </div>
     );
