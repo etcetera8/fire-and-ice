@@ -27,6 +27,6 @@ export const swornMemberCall = async (arrayOfHouses) => {
     });
     return Promise.all(unresolvedPromises);
   } catch (error) {
-    return "Error fetching sworn members"
+    return "Error fetching sworn members";
   }
 };

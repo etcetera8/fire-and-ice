@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ import Card from '../Card/Card';
 
 export class App extends Component {
   constructor(props) {
-    super(props),
+    super(props)
     this.state = {
       loading: true
     }
@@ -41,7 +41,7 @@ export class App extends Component {
         </div>
         <div className='Display-info'>
           { this.state.loading &&
-            <img src={gif} />
+            <img src={gif} alt="loading..." />
           } 
           { this.props.houseArray &&
             this.makeCards(this.props.houseArray)
