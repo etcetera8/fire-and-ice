@@ -31,7 +31,7 @@ export class Card extends Component {
   
   
   render () {
-    const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words, swornMembers} = this.props;
+    const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words, swornMembers} = this.props.house;
     return (
       <section className='Card' onClick={this.clicked}>
         <span className="house-info">{name}</span>
