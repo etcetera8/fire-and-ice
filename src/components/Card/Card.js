@@ -2,9 +2,8 @@ import React from 'react';
 import './Card.css'
 
 export const Card = ({name, founded, seats, titles, coatOfArms, ancestralWeapons, words}) => {
-  console.log("hi", name, founded, seats, titles, coatOfArms, ancestralWeapons, words)
   return (
-    <section className='display-card'>
+    <section className='Card'>
       <span className="house-info">{name}</span>
       <span className="house-info">Founded: {founded}</span>
       <span className="house-info">Seats: {seats}</span>
