@@ -18,7 +18,7 @@ describe('initial Api call', () => {
     expect(window.fetch).toHaveBeenCalledWith("http://localhost:3001/api/v1/houses")
   })
 
-  it('returns data when the status is ok', async () => {
+  it.only('returns data when the status is ok', async () => {
     window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
     status: 200,
     json: () => Promise.resolve({
@@ -50,9 +50,11 @@ describe("swornMemberCall", () => {
     }))
   })
 
-  it('should be called with the right params', async () => {
-    const results = await swornMemberCall([]);
-    console.log(results);
+  const mockArray = [{swornMembers:'www.character.com'}]
+
+  it.only('should be called with the right params', async () => {
+    const results = await swornMemberCall(mockArray);
+    expect(window.fetch).toHaveBeenCalledWith()
   })
 
   it('returns data when the status is ok', async () => {
