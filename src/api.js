@@ -1,6 +1,5 @@
 export const initialApiCall = async () => {
   try {
-
   const response = await fetch(`http://localhost:3001/api/v1/houses`);
   const resolvedResponse = await response.json();
   const cleanedMembers = await swornMemberCall(resolvedResponse)
@@ -20,36 +19,9 @@ export const swornMemberCall = async (arrayOfHouses) => {
     const unresolvedMembers = house.swornMembers.map(async (url) => {
       let memberFetch = await fetch(url)
       let memberInfo = await memberFetch.json();
-      return memberInfo
+      return memberInfo;
     })
     return await Promise.all(unresolvedMembers)
   })
   return Promise.all(unresolvedPromises)
-}
-
-//http://localhost:3001/api/v1/character/:id
-
-const initialCleaner = (array) => {
-  const cleanedCards = array.map( card => {
-    const {
-      name, 
-      ancestralWeapons,
-      founded,
-      seats,
-      titles,
-      coatOfArms,
-      words
-    } = card
-
-    return {
-      name,
-      ancestralWeapons,
-      founded,
-      seats,
-      titles,
-      coatOfArms,
-      words
-    }
-  })
-  return cleanedCards
 }

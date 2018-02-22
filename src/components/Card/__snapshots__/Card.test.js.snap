@@ -4,7 +4,22 @@ exports[`Card should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Card />,
+  Symbol(enzyme.__unrendered__): <Card
+    house={
+        Object {
+            "ancestralWeapons": "sword",
+            "coatOfArms": "tvshow",
+            "founded": 1,
+            "name": "house",
+            "seats": 2,
+            "swornMembers": Array [
+              "neb",
+            ],
+            "titles": 3,
+            "words": "",
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -20,37 +35,45 @@ ShallowWrapper {
       "children": Array [
         <span
           className="house-info"
-/>,
+>
+          house
+</span>,
         <span
           className="house-info"
 >
           Founded: 
+          1
 </span>,
         <span
           className="house-info"
 >
           Seats: 
+          2
 </span>,
         <span
           className="house-info"
 >
           Titles: 
+          3
 </span>,
         <span
           className="house-info"
 >
           Coat of Arms: "
+          tvshow
           "
 </span>,
         <span
           className="house-info"
 >
           Ancestral Weapons: 
+          sword
 </span>,
         <span
           className="house-info"
 >
           Words: 
+          
 </span>,
         false,
       ],
@@ -64,11 +87,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": "house",
           "className": "house-info",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "house",
         "type": "span",
       },
       Object {
@@ -78,14 +101,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Founded: ",
-            undefined,
+            1,
           ],
           "className": "house-info",
         },
         "ref": null,
         "rendered": Array [
           "Founded: ",
-          undefined,
+          1,
         ],
         "type": "span",
       },
@@ -96,14 +119,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Seats: ",
-            undefined,
+            2,
           ],
           "className": "house-info",
         },
         "ref": null,
         "rendered": Array [
           "Seats: ",
-          undefined,
+          2,
         ],
         "type": "span",
       },
@@ -114,14 +137,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Titles: ",
-            undefined,
+            3,
           ],
           "className": "house-info",
         },
         "ref": null,
         "rendered": Array [
           "Titles: ",
-          undefined,
+          3,
         ],
         "type": "span",
       },
@@ -132,7 +155,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Coat of Arms: \\"",
-            undefined,
+            "tvshow",
             "\\"",
           ],
           "className": "house-info",
@@ -140,7 +163,7 @@ ShallowWrapper {
         "ref": null,
         "rendered": Array [
           "Coat of Arms: \\"",
-          undefined,
+          "tvshow",
           "\\"",
         ],
         "type": "span",
@@ -152,14 +175,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Ancestral Weapons: ",
-            undefined,
+            "sword",
           ],
           "className": "house-info",
         },
         "ref": null,
         "rendered": Array [
           "Ancestral Weapons: ",
-          undefined,
+          "sword",
         ],
         "type": "span",
       },
@@ -170,14 +193,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Words: ",
-            undefined,
+            "",
           ],
           "className": "house-info",
         },
         "ref": null,
         "rendered": Array [
           "Words: ",
-          undefined,
+          "",
         ],
         "type": "span",
       },
@@ -194,37 +217,45 @@ ShallowWrapper {
         "children": Array [
           <span
             className="house-info"
-/>,
+>
+            house
+</span>,
           <span
             className="house-info"
 >
             Founded: 
+            1
 </span>,
           <span
             className="house-info"
 >
             Seats: 
+            2
 </span>,
           <span
             className="house-info"
 >
             Titles: 
+            3
 </span>,
           <span
             className="house-info"
 >
             Coat of Arms: "
+            tvshow
             "
 </span>,
           <span
             className="house-info"
 >
             Ancestral Weapons: 
+            sword
 </span>,
           <span
             className="house-info"
 >
             Words: 
+            
 </span>,
           false,
         ],
@@ -238,11 +269,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": "house",
             "className": "house-info",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "house",
           "type": "span",
         },
         Object {
@@ -252,14 +283,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Founded: ",
-              undefined,
+              1,
             ],
             "className": "house-info",
           },
           "ref": null,
           "rendered": Array [
             "Founded: ",
-            undefined,
+            1,
           ],
           "type": "span",
         },
@@ -270,14 +301,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Seats: ",
-              undefined,
+              2,
             ],
             "className": "house-info",
           },
           "ref": null,
           "rendered": Array [
             "Seats: ",
-            undefined,
+            2,
           ],
           "type": "span",
         },
@@ -288,14 +319,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Titles: ",
-              undefined,
+              3,
             ],
             "className": "house-info",
           },
           "ref": null,
           "rendered": Array [
             "Titles: ",
-            undefined,
+            3,
           ],
           "type": "span",
         },
@@ -306,7 +337,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Coat of Arms: \\"",
-              undefined,
+              "tvshow",
               "\\"",
             ],
             "className": "house-info",
@@ -314,7 +345,7 @@ ShallowWrapper {
           "ref": null,
           "rendered": Array [
             "Coat of Arms: \\"",
-            undefined,
+            "tvshow",
             "\\"",
           ],
           "type": "span",
@@ -326,14 +357,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Ancestral Weapons: ",
-              undefined,
+              "sword",
             ],
             "className": "house-info",
           },
           "ref": null,
           "rendered": Array [
             "Ancestral Weapons: ",
-            undefined,
+            "sword",
           ],
           "type": "span",
         },
@@ -344,14 +375,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Words: ",
-              undefined,
+              "",
             ],
             "className": "house-info",
           },
           "ref": null,
           "rendered": Array [
             "Words: ",
-            undefined,
+            "",
           ],
           "type": "span",
         },

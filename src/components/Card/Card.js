@@ -10,10 +10,9 @@ export class Card extends Component {
   }
 
   clicked = () => {
-    console.log(this.state);
-    if (this.state.clicked === false) {
+    if (!this.state.clicked) {
       this.setState({clicked: true})
-    } else if (this.state.clicked === true) {
+    } else if (this.state.clicked) {
       this.setState({clicked: false})
       }
     }
@@ -49,7 +48,5 @@ export class Card extends Component {
     )
   }
 }
-
-
 
 export default Card;
