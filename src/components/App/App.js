@@ -22,15 +22,9 @@ export class App extends Component {
     this.setState({loading: false})
   }
 
-  clicked = (house) => {
-    console.log('clicked', this, house)
-    
-  }
-
   makeCards = (array) => {
     const cardArray = array.map( (house, index) =>
       <Card
-        clicked={this.clicked}
         name={house.name} 
         coatOfArms={house.coatOfArms}
         founded={house.founded}
