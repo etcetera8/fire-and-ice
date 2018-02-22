@@ -3,7 +3,7 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
+import { fakeAction, addHouses } from '../../actions';
 import { initialApiCall } from '../../api.js'
 
 class App extends Component {
@@ -11,6 +11,7 @@ class App extends Component {
   componentDidMount = async () => {
     const houses = await initialApiCall()
     console.log(houses);
+    this.props.addHousestoStore(houses)
   }
 
   render() {
@@ -40,6 +41,7 @@ const mapStateToProps = ({ fake }) => ({ fake });
 
 const mapDispatchToProps = dispatch => ({ 
   fakeAction: () => dispatch(fakeAction()),
+  addHousestoStore: (houseArray) => dispatch(addHouses(houseArray))
   
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
