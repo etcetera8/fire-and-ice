@@ -1,10 +1,10 @@
 import React from 'react';
 import './Card.css'
 
-export const Card = ({name, founded, seats, titles, coatOfArms, ancestralWeapons, words, swornMembers}) => {
-  console.log("hi", swornMembers);
+export const Card = ({name, founded, seats, titles, coatOfArms, ancestralWeapons, words, swornMembers, clicked}) => {
+  
   return (
-    <section className='Card'>
+    <section className='Card' onClick={() => clicked(name)}>
       <span className="house-info">{name}</span>
       <span className="house-info">Founded: {founded}</span>
       <span className="house-info">Seats: {seats}</span>
