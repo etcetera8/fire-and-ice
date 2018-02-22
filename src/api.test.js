@@ -40,7 +40,6 @@ describe('initial Api call', () => {
 
 describe("swornMemberCall", () => {
 
-
   it('should be called with the array of houses', async () => {
     window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
       status: 200,
@@ -61,14 +60,14 @@ describe("swornMemberCall", () => {
       )
     }))
     const results = await swornMemberCall(mockSwornMembers);
-    console.log(results[0][0][0]);
-
-
+    expect(results[0][0][0]).toEqual({swornMembers: [{died: false, name: "neb"}]})
   })
 
   it('should catch an error if it fails', async () => {
     window.fetch = jest.fn().mockImplementation( () => new Promise((resolve, reject) => {
       reject(new Error('failed'))
     }))
+    expect(await swornMemberCall()).toEqual("Error fetching sworn members")
   })
+
 })
