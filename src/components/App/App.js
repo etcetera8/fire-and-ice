@@ -8,7 +8,7 @@ import { initialApiCall } from '../../api.js'
 import gif from '../../gear.gif'
 import Card from '../Card/Card';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props),
     this.state = {
@@ -18,10 +18,8 @@ class App extends Component {
 
   componentDidMount = async () => {
     const houses = await initialApiCall()
-    console.log(houses);
     this.props.addHousestoStore(houses)
     this.setState({loading: false})
-    console.log(this.props);
   }
 
   makeCards = () => {
