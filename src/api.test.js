@@ -50,8 +50,9 @@ describe("swornMemberCall", () => {
     }))
   })
 
-  it.only('should be called with the right params', async () => {
+  it('should be called with the right params', async () => {
     const results = await swornMemberCall([]);
+    console.log(results);
   })
 
   it('returns data when the status is ok', async () => {
