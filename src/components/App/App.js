@@ -65,6 +65,5 @@ export const mapStateToProps = ( state ) => ({
 
 export const mapDispatchToProps = dispatch => ({ 
   addHousesToStore: (houseArray) => dispatch(addHouses(houseArray))
-  
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
