@@ -24,15 +24,8 @@ export class App extends Component {
 
   makeCards = (array) => {
     const cardArray = array.map( (house, index) =>
-      <Card 
-        name={house.name} 
-        coatOfArms={house.coatOfArms}
-        founded={house.founded}
-        seats={house.seats}
-        titles={house.titles}
-        words={house.words}
-        swornMembers={house.swornMembers}
-        ancestralWeapons={house.ancestralWeapons}
+      <Card
+        house={house}
         key={index}
       />
     )
@@ -48,7 +41,7 @@ export class App extends Component {
           <button onClick={() => {
             this.props.fakeAction();
             alert(this.props.fake);
-          }}> FAKE ACTION</button>
+          }}>FAKE ACTION</button>
         </div>
         <div className='Display-info'>
           { this.state.loading &&
@@ -56,7 +49,6 @@ export class App extends Component {
           } 
           { this.props.houseArray &&
             this.makeCards(this.props.houseArray)
-
           }
         </div>
       </div>
