@@ -25,9 +25,17 @@ class App extends Component {
   }
 
   makeCards = () => {
-    const cardArray = this.props.houseArray.map( house => {
-      return <Card name={house.name} />
-    })
+    const cardArray = this.props.houseArray.map( house =>
+      <Card 
+        name={house.name} 
+        coatOfArms={house.coatOfArms}
+        founded={house.founded}
+        seats={house.seats}
+        titles={house.titles}
+        words={house.words}
+        ancestralWeapons={house.ancestralWeapons}
+      />
+)
     return cardArray;
   }
 
