@@ -10,14 +10,15 @@ describe('App', () => {
     expect(wrapper.state().loading).toEqual(true)
   })
 
-  it("the make cards function should return an array of cards", () => {
+  it("the make cards function should return an array of jsx object cards", () => {
       const wrapper = shallow(<App
        addHousesToStore = {jest.fn()}
        houseArray={mockHouseArray}
        />)
       const inst = wrapper.instance();
       const results = inst.makeCards(mockHouseArray)
-      expect(results.length).toEqual(4)
+      expect(results.length).toEqual(1)
+      expect(typeof results[0]).toEqual('object')
   })
 
   it('the mapStateToProps should return an object' ,() => {

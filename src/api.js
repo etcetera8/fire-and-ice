@@ -2,6 +2,7 @@ export const initialApiCall = async () => {
   try {
     const response = await fetch(`http://localhost:3001/api/v1/houses`);
     const resolvedResponse = await response.json();
+    
     const cleanedMembers = await swornMemberCall(resolvedResponse);
     
     const membersAdded = resolvedResponse.map((house, index) => {
@@ -15,13 +16,17 @@ export const initialApiCall = async () => {
 };
 
 export const swornMemberCall = async (arrayOfHouses) => {
-  const unresolvedPromises = arrayOfHouses.map( async (house) => {
-    const unresolvedMembers = house.swornMembers.map(async (url) => {
-      let memberFetch = await fetch(url);
-      let memberInfo = await memberFetch.json();
-      return memberInfo;
+  try {  
+    const unresolvedPromises = arrayOfHouses.map( async (house) => {
+      const unresolvedMembers = house.swornMembers.map(async (url) => {
+        let memberFetch = await fetch(url);
+        let memberInfo = await memberFetch.json();
+        return memberInfo;
+      });
+      return await Promise.all(unresolvedMembers);
     });
-    return await Promise.all(unresolvedMembers);
-  });
-  return Promise.all(unresolvedPromises);
+    return Promise.all(unresolvedPromises);
+  } catch (error) {
+    return "Error fetching sworn members"
+  }
 };

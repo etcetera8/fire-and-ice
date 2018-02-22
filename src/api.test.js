@@ -1,18 +1,15 @@
 /* eslint-disable */
-
 import React from 'react';
 import {shallow} from 'enzyme';
 import { initialApiCall, swornMemberCall } from './api';
-import {mockHouseArray} from './mockData';
+import {mockHouseArray, mockSwornMembers} from './mockData';
 
 describe('initial Api call', () => {
  let wrapper;
  beforeEach( () => {
   window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
     status: 200,
-    json: () => Promise.resolve({
-      results: mockHouseArray
-    })
+    json: () => Promise.resolve(mockHouseArray)
   }))
  })
   it('should be called with the right parameters', async () => {
@@ -20,16 +17,16 @@ describe('initial Api call', () => {
     expect(window.fetch).toHaveBeenCalledWith("http://localhost:3001/api/v1/houses")
   })
 
-  it.only('returns data when the status is ok', async () => {
+  it('returns data when the status is ok', async () => {
     window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
-    status: 200,
-    json: () => Promise.resolve({
-      results: mockHouseArray
-    })
-  }))
+      status: 200,
+      json: () => Promise.resolve(
+        mockHouseArray
+      )
+    }))
+
     const results = await initialApiCall();
-    console.log(results);
-    expect(results.results).toEqual(mockHouseArray)
+    expect(results).toEqual(mockHouseArray)
   })
 
   it('should catch an error if it fails', async () => {
@@ -42,28 +39,35 @@ describe('initial Api call', () => {
 })
 
 describe("swornMemberCall", () => {
-  beforeEach( () => {
 
+  it('should be called with the array of houses', async () => {
     window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
       status: 200,
-      json: () => Promise.resolve({
-        results: {}
-      })
+      json: () => Promise.resolve(
+        mockSwornMembers
+      )
     }))
-  })
-
-  const mockArray = [{swornMembers:'www.character.com'}]
-
-  it.only('should be called with the right params', async () => {
-    const results = await swornMemberCall(mockArray);
-    expect(window.fetch).toHaveBeenCalledWith()
+    const results = await swornMemberCall(mockSwornMembers);
+    const expected = [[{"died": true, "name": "blargus"}, {"died": false, "name": "neb"}]]
+    expect(window.fetch).toHaveBeenCalled()
   })
 
   it('returns data when the status is ok', async () => {
-
+    window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(
+        mockSwornMembers
+      )
+    }))
+    const results = await swornMemberCall(mockSwornMembers);
+    expect(results[0][0][0]).toEqual({swornMembers: [{died: false, name: "neb"}]})
   })
 
   it('should catch an error if it fails', async () => {
-
+    window.fetch = jest.fn().mockImplementation( () => new Promise((resolve, reject) => {
+      reject(new Error('failed'))
+    }))
+    expect(await swornMemberCall()).toEqual("Error fetching sworn members")
   })
+
 })
