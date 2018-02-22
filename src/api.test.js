@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React from 'react';
 import {shallow} from 'enzyme';
 import { initialApiCall, swornMemberCall } from './api';
@@ -22,11 +21,12 @@ describe('initial Api call', () => {
 
   it.only('returns data when the status is ok', async () => {
     window.fetch = jest.fn().mockImplementation( () => Promise.resolve({
-    status: 200,
-    json: () => Promise.resolve({
-      results: mockHouseArray
-    })
-  }))
+      status: 200,
+      json: () => Promise.resolve({
+        results: mockHouseArray
+      })
+    }))
+
     const results = await initialApiCall();
     console.log(results);
     expect(results.results).toEqual(mockHouseArray)
@@ -54,7 +54,7 @@ describe("swornMemberCall", () => {
 
   const mockArray = [{swornMembers:'www.character.com'}]
 
-  it.only('should be called with the right params', async () => {
+  it('should be called with the right params', async () => {
     const results = await swornMemberCall(mockArray);
     expect(window.fetch).toHaveBeenCalledWith()
   })

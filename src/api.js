@@ -2,6 +2,7 @@ export const initialApiCall = async () => {
   try {
     const response = await fetch(`http://localhost:3001/api/v1/houses`);
     const resolvedResponse = await response.json();
+    console.log(resolvedResponse);
     const cleanedMembers = await swornMemberCall(resolvedResponse);
     
     const membersAdded = resolvedResponse.map((house, index) => {
