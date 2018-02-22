@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <span
+          className="house-info"
+/>,
+        <span
+          className="house-info"
+>
+          Founded: 
+</span>,
+        <span
+          className="house-info"
+>
+          Seats: 
+</span>,
+        <span
+          className="house-info"
+>
+          Titles: 
+</span>,
+        <span
+          className="house-info"
+>
+          Coat of Arms: "
+          "
+</span>,
+        <span
+          className="house-info"
+>
+          Ancestral Weapons: 
+</span>,
+        <span
+          className="house-info"
+>
+          Words: 
+</span>,
+      ],
+      "className": "Card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Founded: ",
+            undefined,
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Founded: ",
+          undefined,
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Seats: ",
+            undefined,
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Seats: ",
+          undefined,
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Titles: ",
+            undefined,
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Titles: ",
+          undefined,
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Coat of Arms: \\"",
+            undefined,
+            "\\"",
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Coat of Arms: \\"",
+          undefined,
+          "\\"",
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Ancestral Weapons: ",
+            undefined,
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Ancestral Weapons: ",
+          undefined,
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Words: ",
+            undefined,
+          ],
+          "className": "house-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Words: ",
+          undefined,
+        ],
+        "type": "span",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <span
+            className="house-info"
+/>,
+          <span
+            className="house-info"
+>
+            Founded: 
+</span>,
+          <span
+            className="house-info"
+>
+            Seats: 
+</span>,
+          <span
+            className="house-info"
+>
+            Titles: 
+</span>,
+          <span
+            className="house-info"
+>
+            Coat of Arms: "
+            "
+</span>,
+          <span
+            className="house-info"
+>
+            Ancestral Weapons: 
+</span>,
+          <span
+            className="house-info"
+>
+            Words: 
+</span>,
+        ],
+        "className": "Card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Founded: ",
+              undefined,
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Founded: ",
+            undefined,
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Seats: ",
+              undefined,
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Seats: ",
+            undefined,
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Titles: ",
+              undefined,
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Titles: ",
+            undefined,
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Coat of Arms: \\"",
+              undefined,
+              "\\"",
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Coat of Arms: \\"",
+            undefined,
+            "\\"",
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Ancestral Weapons: ",
+              undefined,
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Ancestral Weapons: ",
+            undefined,
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Words: ",
+              undefined,
+            ],
+            "className": "house-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Words: ",
+            undefined,
+          ],
+          "type": "span",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -3,14 +3,39 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
+import { addHouses } from '../../actions';
 import { initialApiCall } from '../../api.js'
+import gif from '../../gear.gif'
+import Card from '../Card/Card';
 
-class App extends Component {
+export class App extends Component {
+  constructor(props) {
+    super(props),
+    this.state = {
+      loading: true
+    }
+  }
 
   componentDidMount = async () => {
     const houses = await initialApiCall()
-    console.log(houses);
+    await this.props.addHousesToStore(houses)
+    this.setState({loading: false})
+  }
+
+  makeCards = (array) => {
+    const cardArray = array.map( (house, index) =>
+      <Card 
+        name={house.name} 
+        coatOfArms={house.coatOfArms}
+        founded={house.founded}
+        seats={house.seats}
+        titles={house.titles}
+        words={house.words}
+        ancestralWeapons={house.ancestralWeapons}
+        key={index}
+      />
+    )
+    return cardArray;
   }
 
   render() {
@@ -25,6 +50,13 @@ class App extends Component {
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
+          { this.state.loading &&
+            <img src={gif} />
+          } 
+          { this.props.houseArray &&
+            this.makeCards(this.props.houseArray)
+
+          }
         </div>
       </div>
     );
@@ -32,14 +64,14 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
+export const mapStateToProps = ( state ) => ({ 
+  houseArray: state.addHouses
+});
 
-const mapDispatchToProps = dispatch => ({ 
-  fakeAction: () => dispatch(fakeAction()),
+export const mapDispatchToProps = dispatch => ({ 
+  addHousesToStore: (houseArray) => dispatch(addHouses(houseArray))
   
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
