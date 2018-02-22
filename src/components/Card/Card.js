@@ -17,6 +17,17 @@ export class Card extends Component {
       this.setState({clicked: false})
       }
     }
+
+  createMembers = (swornMembers) => {
+    const arrayOfMembers = swornMembers.map( member => {
+      return <div> Sworn Members
+                <span className="house-info">Name: {member.name}</span>
+                <span className="house-info">Gender: {member.gender}</span>
+                <span className="house-info">Died: {member.died}</span>
+              </div>
+    })
+    return arrayOfMembers
+  }
   
   
   render () {
@@ -32,7 +43,7 @@ export class Card extends Component {
         <span className="house-info">Words: {words}</span>
         {
           this.state.clicked && 
-          <span>{swornMembers}</span>
+          this.createMembers(swornMembers)
         }
       </section>
     )

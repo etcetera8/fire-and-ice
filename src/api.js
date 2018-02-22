@@ -20,7 +20,7 @@ export const swornMemberCall = async (arrayOfHouses) => {
     const unresolvedMembers = house.swornMembers.map(async (url) => {
       let memberFetch = await fetch(url)
       let memberInfo = await memberFetch.json();
-      return memberInfo.name
+      return memberInfo
     })
     return await Promise.all(unresolvedMembers)
   })
