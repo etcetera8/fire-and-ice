@@ -8,8 +8,9 @@ import { initialApiCall } from '../../api.js'
 
 class App extends Component {
 
-  async componentDidMount() {
-    initialApiCall()
+  componentDidMount = async () => {
+    const houses = await initialApiCall()
+    console.log(houses);
   }
 
   render() {
@@ -36,7 +37,9 @@ App.propTypes = {
 };
 
 const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ fakeAction:
-  () => dispatch(fakeAction())
+
+const mapDispatchToProps = dispatch => ({ 
+  fakeAction: () => dispatch(fakeAction()),
+  
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
