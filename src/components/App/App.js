@@ -21,6 +21,14 @@ class App extends Component {
     console.log(houses);
     this.props.addHousestoStore(houses)
     this.setState({loading: false})
+    console.log(this.props);
+  }
+
+  makeCards = () => {
+    const cardArray = this.props.houseArray.map( house => {
+      return <Card name={house.name} />
+    })
+    return cardArray;
   }
 
   render() {
@@ -38,7 +46,7 @@ class App extends Component {
           { this.state.loading &&
             <img src={gif} />
           }
-          <Card />
+          {this.makeCards()}
         </div>
       </div>
     );
@@ -50,7 +58,9 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
+const mapStateToProps = ( state ) => ({ 
+  houseArray: state.addHouses
+});
 
 const mapDispatchToProps = dispatch => ({ 
   fakeAction: () => dispatch(fakeAction()),
