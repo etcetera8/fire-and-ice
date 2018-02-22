@@ -1,7 +1,8 @@
 import React from 'react';
 import './Card.css'
 
-export const Card = ({name, founded, seats, titles, coatOfArms, ancestralWeapons, words}) => {
+export const Card = ({name, founded, seats, titles, coatOfArms, ancestralWeapons, words, swornMembers}) => {
+  console.log("hi", swornMembers);
   return (
     <section className='Card'>
       <span className="house-info">{name}</span>

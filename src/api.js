@@ -4,15 +4,11 @@ export const initialApiCall = async () => {
   const response = await fetch(`http://localhost:3001/api/v1/houses`);
   const resolvedResponse = await response.json();
   const cleanedMembers = await swornMemberCall(resolvedResponse)
- 
   
   const membersAdded = resolvedResponse.map((house, index) => {
     house.swornMembers = cleanedMembers[index]
     return house
   })
-
-  console.log(membersAdded);
-
   return membersAdded;
 } catch (error) {
   return "Error fetching data"

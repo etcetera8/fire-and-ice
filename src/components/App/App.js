@@ -31,6 +31,7 @@ export class App extends Component {
         seats={house.seats}
         titles={house.titles}
         words={house.words}
+        swornMembers={house.swornMembers}
         ancestralWeapons={house.ancestralWeapons}
         key={index}
       />
