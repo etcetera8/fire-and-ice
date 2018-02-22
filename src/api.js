@@ -7,7 +7,6 @@ export const initialApiCall = async () => {
 
 const initialCleaner = (array) => {
   const cleanedCards = array.map( card => {
-    console.log(card)
     const {
       name,
       ancestralWeapons,
