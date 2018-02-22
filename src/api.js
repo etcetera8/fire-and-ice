@@ -3,16 +3,36 @@ export const initialApiCall = async () => {
 
   const response = await fetch(`http://localhost:3001/api/v1/houses`);
   const resolvedResponse = await response.json();
-  return resolvedResponse;
+  const cleanedMembers = await swornMemberCall(resolvedResponse)
+  
+  const membersAdded = resolvedResponse.map((house, index) => {
+    house.swornMembers = cleanedMembers[index]
+    return house
+  })
+  return membersAdded;
 } catch (error) {
   return "Error fetching data"
   }
 }
 
+export const swornMemberCall = async (arrayOfHouses) => {
+  const unresolvedPromises = arrayOfHouses.map( async (house) => {
+    const unresolvedMembers = house.swornMembers.map(async (url) => {
+      let memberFetch = await fetch(url)
+      let memberInfo = await memberFetch.json();
+      return memberInfo.name
+    })
+    return await Promise.all(unresolvedMembers)
+  })
+  return Promise.all(unresolvedPromises)
+}
+
+//http://localhost:3001/api/v1/character/:id
+
 const initialCleaner = (array) => {
   const cleanedCards = array.map( card => {
     const {
-      name,
+      name, 
       ancestralWeapons,
       founded,
       seats,
