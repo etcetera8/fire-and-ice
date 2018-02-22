@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes, { shape, func, string } from 'prop-types';
 import './Card.css'
 
 export class Card extends Component {
@@ -47,6 +48,10 @@ export class Card extends Component {
       </section>
     )
   }
+}
+
+Card.propTypes = {
+  house: PropTypes.object.isRequired
 }
 
 export default Card;

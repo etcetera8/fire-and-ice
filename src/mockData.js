@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockHouseArray =  [
     {
       name: 'House Corbray of Heart\'s Home',
